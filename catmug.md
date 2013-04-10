@@ -299,4 +299,12 @@ mssql.query(sql, {
     }
 });
 ```
+### Blob Storage
 
+### Scheduler
+http://hashtagfail.com/post/38488024433/mobile-services-scheduler  
+http://thejoyofcode.com/Periodic_Notifications_with_Windows_Azure_Mobile_Services.aspx
+
+### Command Line Interface
+http://thejoyofcode.com/Getting_started_with_the_CLI_and_backing_up_your_scripts_Day_4_.aspx  
+http://thejoyofcode.com/More_CLI_ndash_changing_your_Mobile_Services_workflow_Day_5_.aspx
