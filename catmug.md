@@ -248,3 +248,36 @@ function insert(item, user, request) {
     }
 }
 ```
+### Sending a Push when a TodoItem is Completed (with a Join)
+```javascript
+function update(item, user, request) {
+
+    request.execute();
+
+    if (item.CreatedBy === user.userId) {
+        console.log('Same user. No push to send.');
+        return;
+    }
+
+    tables.getTable('DeviceTokens').where({
+        UserId: item.CreatedBy
+    }).read({
+        success: getUserAndSendPush
+    });
+
+    function getUserAndSendPush(deviceTokens) {
+        tables.getTable('Users').where({
+            ProviderId: user.userId
+        }).read({
+            success: function(userResults) {
+                console.log('here');
+                deviceTokens.forEach(function(deviceToken) {
+                    push.wns.sendToastText01(deviceToken.Token, {
+                        text1: userResults[0].FirstName + ' completed task: ' + item.text
+                    });
+                });
+            }
+        });
+    }
+}
+```
