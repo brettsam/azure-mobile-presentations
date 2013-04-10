@@ -313,7 +313,8 @@ http://www.windowsazure.com/en-us/develop/mobile/tutorials/command-line-administ
 
 ### Client Resources
 #### iOS
-http://www.windowsazure.com/en-us/develop/mobile/ios/
+http://www.windowsazure.com/en-us/develop/mobile/ios/  
+http://thejoyofcode.com/
 
 #### Android
 http://chrisrisner.com/Announcing-Android-Support-for-Mobile-Services  
