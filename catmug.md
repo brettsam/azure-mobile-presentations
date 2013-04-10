@@ -119,7 +119,6 @@ function read(query, user, request) {
     });
 
     request.execute();
-
 }
 ```
 ### User Identities
@@ -203,7 +202,6 @@ public class TodoItem
     public bool Complete { get; set; }
     
     public string CreatedBy { get; set; }
-
 }
 
 // ...snip...
