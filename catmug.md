@@ -24,7 +24,7 @@ Sign up for Azure: http://www.windowsazure.com/en-us/pricing/free-trial/
 Azure mobile dev center: http://www.windowsazure.com/en-us/develop/mobile/
 
 ## Creating a Service and Running the QuickStart
-![](http://www.windowsazure.com//media/devcenter/mobile/mobile-create.png)
+All supported SDKs have quickstarts that can be found at http://www.windowsazure.com/en-us/develop/mobile/tutorials/get-started/
 
 ## Behind the Scenes: SQL Azure
 
