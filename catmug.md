@@ -33,7 +33,7 @@ Windows Azure Mobile Services REST API Reference: http://msdn.microsoft.com/en-u
 
 SQL Azure: http://www.windowsazure.com/en-us/home/features/data-management/
 
-### Authentication
+### Logging In
 Add some login buttons:
 ```xml
 <Grid Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,20">
@@ -64,6 +64,7 @@ Login from C#:
 ```c#
 MobileServiceUser user = await App.MobileService.LoginAsync(provider);
 ```
+### Creating Users
 Create Users table and User object:
 ```c#
 [DataTable(Name="Users")]
@@ -81,6 +82,37 @@ public class User
 // ...snip...
 
 private IMobileServiceTable<User> userTable = App.MobileService.GetTable<User>();
+```
 
+```
+var results = await userTable.Where(u => u.ProviderId == user.UserId).ToListAsync();
+User existingUser = results.FirstOrDefault();
+
+if (existingUser == null)
+{
+    var dialog = new MessageDialog(
+        String.Format("Welcome {0} {1}! It looks like you're new. Would you like to create a new profile?",
+        existingUser.FirstName, existingUser.LastName));
+
+    dialog.Commands.Add(new UICommand("Yes Please"));
+    dialog.Commands.Add(new UICommand("No Thanks"));
+    var result = await dialog.ShowAsync();
+
+    if (result.Label != "Yes Please")
+    {
+        return;
+    }
+
+    existingUser = new User()
+        {
+            ProviderId = user.UserId
+        };                
+
+    await userTable.InsertAsync(existingUser);
+}
+
+RefreshTodoItems();
+this.LoggedInPanel.Visibility = Visibility.Visible;
+this.LoginButtons.Visibility = Visibility.Collapsed;
 ```
 
