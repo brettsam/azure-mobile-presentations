@@ -214,3 +214,6 @@ private void ButtonSave_Click(object sender, RoutedEventArgs e)
     InsertTodoItem(todoItem);
 }
 ```
+```xml
+<TextBlock Text="{Binding CreatedBy}" FontStyle="Italic" VerticalAlignment="Center" />
+```
