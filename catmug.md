@@ -26,6 +26,10 @@ Azure mobile dev center: http://www.windowsazure.com/en-us/develop/mobile/
 ### Creating a Service and Running the QuickStart
 All supported SDKs have quickstarts that can be found at http://www.windowsazure.com/en-us/develop/mobile/tutorials/get-started/
 
+### Behind the Scenes: REST API
+Fiddler: http://fiddler2.com
+Windows Azure Mobile Services REST API Reference: http://msdn.microsoft.com/en-us/library/windowsazure/jj710108.aspx
+
 ### Behind the Scenes: SQL Azure
 
 
