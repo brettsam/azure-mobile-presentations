@@ -34,7 +34,7 @@ Windows Azure Mobile Services REST API Reference: http://msdn.microsoft.com/en-u
 SQL Azure: http://www.windowsazure.com/en-us/home/features/data-management/
 
 ### Authentication
-'''xml
+```xml
             <Grid Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,20">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -58,6 +58,6 @@ SQL Azure: http://www.windowsazure.com/en-us/home/features/data-management/
                     </StackPanel>
                 </Grid>
             </Grid>
-'''
+```
 
 
