@@ -190,3 +190,27 @@ function read(query, user, request) {
     });
 }
 ```
+### Associating Users with TodoItems
+```c#
+public class TodoItem
+{
+    public int Id { get; set; }
+
+    [DataMember(Name = "text")]
+    public string Text { get; set; }
+
+    [DataMember(Name = "complete")]
+    public bool Complete { get; set; }
+    
+    public string CreatedBy { get; set; }
+
+}
+
+// ...snip...
+
+private void ButtonSave_Click(object sender, RoutedEventArgs e)
+{
+    var todoItem = new TodoItem { Text = TextInput.Text, CreatedBy = App.MobileService.CurrentUser.UserId };
+    InsertTodoItem(todoItem);
+}
+```
