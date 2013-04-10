@@ -215,5 +215,8 @@ private void ButtonSave_Click(object sender, RoutedEventArgs e)
 }
 ```
 ```xml
-<TextBlock Text="{Binding CreatedBy}" FontStyle="Italic" VerticalAlignment="Center" />
+<StackPanel Orientation="Horizontal">
+    <CheckBox Name="CheckBoxComplete" IsChecked="{Binding Complete, Mode=TwoWay}" FontWeight="Bold" Checked="CheckBoxComplete_Checked" Content="{Binding Text}" Margin="10,5" VerticalAlignment="Center"/>
+    <TextBlock Text="{Binding CreatedBy}" FontStyle="Italic" VerticalAlignment="Center" />
+</StackPanel>
 ```
