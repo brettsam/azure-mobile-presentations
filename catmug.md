@@ -231,3 +231,20 @@ private async void RegisterPushChannel()
     await deviceTokenTable.InsertAsync(channel);
 }
 ```
+```javascript
+function insert(item, user, request) {
+    tables.getTable('DeviceTokens').where({
+        Token: item.Token
+    }).read({
+        success: insertChannelIfNotFound
+    });
+
+    function insertChannelIfNotFound(existingChannels) {
+        if (existingChannels.length > 0) {
+            request.respond(statusCodes.OK, existingChannels[0]);
+        } else {
+            request.execute();
+        }
+    }
+}
+```
