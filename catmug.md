@@ -60,5 +60,8 @@ Add some login buttons:
     </Grid>
 </Grid>
 ```
-
+Login from C#:
+```c#
+MobileServiceUser user = await App.MobileService.LoginAsync(provider, true);
+```
 
