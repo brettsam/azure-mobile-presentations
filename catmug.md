@@ -84,7 +84,7 @@ public class User
 private IMobileServiceTable<User> userTable = App.MobileService.GetTable<User>();
 ```
 
-```
+```c#
 var results = await userTable.Where(u => u.ProviderId == user.UserId).ToListAsync();
 User existingUser = results.FirstOrDefault();
 
