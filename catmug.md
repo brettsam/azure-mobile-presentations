@@ -248,7 +248,7 @@ function insert(item, user, request) {
     }
 }
 ```
-### Sending a Push when a TodoItem is Completed (with a Join)
+### Sending a Push when a TodoItem is Completed (using the Table object)
 ```javascript
 function update(item, user, request) {
 
@@ -281,3 +281,17 @@ function update(item, user, request) {
     }
 }
 ```
+### Sending a Push when a TodoItem is Completed (using the mssql object)
+http://msdn.microsoft.com/en-us/library/windowsazure/jj554212.aspx
+```javascript
+mssql.query(sql, {
+    success: function(deviceTokens) {            
+        deviceTokens.forEach(function(deviceToken) {
+            push.wns.sendToastText01(deviceToken.Token, {
+                text1: deviceToken.FirstName + ' completed task: ' + item.text
+            });
+        });
+    }
+});
+```
+
