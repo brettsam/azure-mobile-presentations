@@ -300,6 +300,7 @@ mssql.query(sql, {
 });
 ```
 ### Blob Storage
+http://www.nickharris.net/2012/11/how-to-upload-an-image-to-windows-azure-storage-using-mobile-services/
 
 ### Scheduler
 http://hashtagfail.com/post/38488024433/mobile-services-scheduler  
