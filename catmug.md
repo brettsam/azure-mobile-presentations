@@ -77,5 +77,10 @@ public class User
 
     public string LastName { get; set; }
 }
+
+// ...snip...
+
+private IMobileServiceTable<User> userTable = App.MobileService.GetTable<User>();
+
 ```
 
