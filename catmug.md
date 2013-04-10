@@ -28,6 +28,7 @@ All supported SDKs have quickstarts that can be found at http://www.windowsazure
 
 ### Behind the Scenes: REST API
 Fiddler: http://fiddler2.com
+
 Windows Azure Mobile Services REST API Reference: http://msdn.microsoft.com/en-us/library/windowsazure/jj710108.aspx
 
 ### Behind the Scenes: SQL Azure
