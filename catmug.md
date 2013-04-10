@@ -125,7 +125,19 @@ function read(query, user, request) {
 ### User Identities
 http://blogs.msdn.com/b/carlosfigueira/archive/2012/10/25/getting-user-information-on-azure-mobile-services.aspx  
 http://thejoyofcode.com/Fetching_a_basic_user_profile_in_Mobile_Services_Day_9_.aspx
+```c#
+[DataTable(Name = "Users")]
+public class User
+{
+    public int Id { get; set; }
+    
+    public string ProviderId { get; set; }
 
+    public string FirstName { get; set; }
+
+    public string LastName { get; set; }
+}
+```
 
 ```javascript
 function read(query, user, request) {
