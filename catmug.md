@@ -218,3 +218,16 @@ private void ButtonSave_Click(object sender, RoutedEventArgs e)
     <TextBlock Text="{Binding CreatedBy}" FontStyle="Italic" VerticalAlignment="Center" />
 </StackPanel>
 ```
+### Registering Push Tokens
+http://www.windowsazure.com/en-us/develop/mobile/resources/#header-3  
+http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Windows-Store-app-Add-Push-Notifications-to-your-apps-with-Windows-Azure-Mobile-Services
+```c#
+private async void RegisterPushChannel()
+{
+    CurrentChannel = await PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync();
+
+    IMobileServiceTable<DeviceToken> deviceTokenTable = App.MobileService.GetTable<DeviceToken>();
+    var channel = new DeviceToken { Token = CurrentChannel.Uri, UserId = App.MobileService.CurrentUser.UserId };
+    await deviceTokenTable.InsertAsync(channel);
+}
+```
