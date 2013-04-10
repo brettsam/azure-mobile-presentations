@@ -308,7 +308,7 @@ http://thejoyofcode.com/Periodic_Notifications_with_Windows_Azure_Mobile_Service
 
 ### Command Line Interface
 http://thejoyofcode.com/Getting_started_with_the_CLI_and_backing_up_your_scripts_Day_4_.aspx  
-http://thejoyofcode.com/More_CLI_ndash_changing_your_Mobile_Services_workflow_Day_5_.aspx
+http://thejoyofcode.com/More_CLI_ndash_changing_your_Mobile_Services_workflow_Day_5_.aspx  
 http://www.windowsazure.com/en-us/develop/mobile/tutorials/command-line-administration/
 
 ### Client Resources
@@ -316,8 +316,9 @@ http://www.windowsazure.com/en-us/develop/mobile/tutorials/command-line-administ
 http://www.windowsazure.com/en-us/develop/mobile/ios/
 
 #### Android
-http://chrisrisner.com/Announcing-Android-Support-for-Mobile-Services
+http://chrisrisner.com/Announcing-Android-Support-for-Mobile-Services  
 http://hashtagfail.com/post/44606054459/mobile-services-android-typed-untyped
 
 #### HTML
-http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Getting-Started-with-the-Mobile-Services-HTML-Client
+http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Getting-Started-with-the-Mobile-Services-HTML-Client  
+http://blog.stevensanderson.com/2013/03/13/touralot-an-ios-app-built-with-phonegap-knockout-and-azure-mobile-services/
