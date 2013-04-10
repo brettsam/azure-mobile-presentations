@@ -50,11 +50,11 @@ Add some login buttons:
             </TextBlock>
         </StackPanel>
         <StackPanel Grid.Column="1" HorizontalAlignment="Right" x:Name="LoginButtons" Visibility="Visible">
-            <Button Click="Button_Click_1">Login Microsoft</Button>
-            <Button Click="Button_Click_2">Login Google</Button>
+            <Button Click="Msft_Click">Login Microsoft</Button>
+            <Button Click="Goog_Click">Login Google</Button>
         </StackPanel>
         <StackPanel Grid.Column="1" HorizontalAlignment="Right" x:Name="LoggedInPanel" Visibility="Collapsed">
-            <Button Click="Button_Click_3">Logout</Button>
+            <Button Click="Logout_Click">Logout</Button>
         </StackPanel>
     </Grid>
 </Grid>
