@@ -62,6 +62,6 @@ Add some login buttons:
 ```
 Login from C#:
 ```c#
-MobileServiceUser user = await App.MobileService.LoginAsync(provider, true);
+MobileServiceUser user = await App.MobileService.LoginAsync(provider);
 ```
 
