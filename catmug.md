@@ -70,8 +70,7 @@ Create Users table and User object:
 public class User
 {
     public int Id { get; set; }
-
-    [DataMember(Name = "providerId")]
+    
     public string ProviderId { get; set; }
 
     public string FirstName { get; set; }
