@@ -73,10 +73,6 @@ public class User
     public int Id { get; set; }
     
     public string ProviderId { get; set; }
-
-    public string FirstName { get; set; }
-
-    public string LastName { get; set; }
 }
 
 // ...snip...
@@ -91,8 +87,8 @@ User existingUser = results.FirstOrDefault();
 if (existingUser == null)
 {
     var dialog = new MessageDialog(
-        String.Format("Welcome {0} {1}! It looks like you're new. Would you like to create a new profile?",
-        existingUser.FirstName, existingUser.LastName));
+        String.Format("Welcome {0}! It looks like you're new. Would you like to create a new profile?",
+        App.MobileService.CurrentUser.UserId));
 
     dialog.Commands.Add(new UICommand("Yes Please"));
     dialog.Commands.Add(new UICommand("No Thanks"));
