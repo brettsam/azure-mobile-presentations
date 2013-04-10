@@ -1,7 +1,7 @@
 # Cincinnati All Things Mobile User Group
 April 11, 2013
 
-## Introduction to Windows Azure Mobile Services
+### Introduction to Windows Azure Mobile Services
 Why?
 * many mobile applications want to store some kind of state off of the device
 * many mobile developers are experts on client development
@@ -23,9 +23,9 @@ Sign up for Azure: http://www.windowsazure.com/en-us/pricing/free-trial/
 
 Azure mobile dev center: http://www.windowsazure.com/en-us/develop/mobile/
 
-## Creating a Service and Running the QuickStart
+### Creating a Service and Running the QuickStart
 All supported SDKs have quickstarts that can be found at http://www.windowsazure.com/en-us/develop/mobile/tutorials/get-started/
 
-## Behind the Scenes: SQL Azure
+### Behind the Scenes: SQL Azure
 
 
