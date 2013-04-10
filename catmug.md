@@ -111,4 +111,67 @@ RefreshTodoItems();
 this.LoggedInPanel.Visibility = Visibility.Visible;
 this.LoginButtons.Visibility = Visibility.Collapsed;
 ```
+### Filtering Users on the Server
+```javascript
+function read(query, user, request) {
 
+    query.where({
+        ProviderId: user.userId
+    });
+
+    request.execute();
+
+}
+```
+### User Identities
+```javascript
+function read(query, user, request) {
+
+    query.where({
+        ProviderId: user.userId
+    });
+
+    request.execute({
+        success: function(results) {
+
+            if (results.length === 0) {
+                var identities = user.getIdentities(),
+                    url, fNameId, lNameId;
+
+                if (identities.google) {
+                    var googleAccessToken = identities.google.accessToken;
+                    url = 'https://www.googleapis.com/oauth2/v1/userinfo?access_token=' + googleAccessToken;
+                    fNameId = 'given_name';
+                    lNameId = 'family_name';
+                } else if (identities.microsoft) {
+                    var liveAccessToken = identities.microsoft.accessToken;
+                    url = 'https://apis.live.net/v5.0/me/?method=GET&access_token=' + liveAccessToken;
+                    fNameId = 'first_name';
+                    lNameId = 'last_name';
+                }
+
+                var requestCallback = function(err, resp, body) {
+                        var userData = JSON.parse(body);
+                        var newUser = {};
+                        newUser.FirstName = userData[fNameId];
+                        newUser.LastName = userData[lNameId];
+                        results.push(newUser);
+                        request.respond(statusCodes.OK, results);
+                    };
+
+                var req = require('request');
+                var reqOptions = {
+                    uri: url,
+                    headers: {
+                        Accept: "application/json"
+                    }
+                };
+                req(reqOptions, requestCallback);
+
+            } else {
+                request.respond(statusCodes.OK, results);
+            }
+        }
+    });
+}
+```
