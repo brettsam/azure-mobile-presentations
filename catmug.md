@@ -270,7 +270,6 @@ function update(item, user, request) {
             ProviderId: user.userId
         }).read({
             success: function(userResults) {
-                console.log('here');
                 deviceTokens.forEach(function(deviceToken) {
                     push.wns.sendToastText01(deviceToken.Token, {
                         text1: userResults[0].FirstName + ' completed task: ' + item.text
