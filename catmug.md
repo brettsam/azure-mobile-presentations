@@ -284,6 +284,10 @@ function update(item, user, request) {
 ### Sending a Push when a TodoItem is Completed (using the mssql object)
 http://msdn.microsoft.com/en-us/library/windowsazure/jj554212.aspx
 ```javascript
+var sql = 'SELECT * FROM DeviceTokens \
+           JOIN Users On UserId=ProviderId \
+           WHERE UserId=\'' + item.CreatedBy + '\'';
+
 mssql.query(sql, {
     success: function(deviceTokens) {            
         deviceTokens.forEach(function(deviceToken) {
