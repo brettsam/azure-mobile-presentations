@@ -100,7 +100,7 @@ if (existingUser == null)
 
     existingUser = new User()
         {
-            ProviderId = user.UserId
+            ProviderId = App.MobileService.CurrentUser.UserId
         };                
 
     await userTable.InsertAsync(existingUser);
