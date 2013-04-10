@@ -32,7 +32,7 @@ Windows Azure Mobile Services REST API Reference: http://msdn.microsoft.com/en-u
 SQL Azure: http://www.windowsazure.com/en-us/home/features/data-management/
 
 ### Logging In
-http://blogs.msdn.com/b/carlosfigueira/archive/2012/10/23/troubleshooting-authentication-issues-in-azure-mobile-services.aspx
+http://blogs.msdn.com/b/carlosfigueira/archive/2012/10/23/troubleshooting-authentication-issues-in-azure-mobile-services.aspx  
 Add some login buttons:
 ```xml
 <Grid Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,20">
