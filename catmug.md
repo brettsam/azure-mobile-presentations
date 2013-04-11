@@ -39,21 +39,6 @@ Login from C#:
 MobileServiceUser user = await App.MobileService.LoginAsync(provider);
 ```
 ### Creating Users
-Create Users table and User object:
-```c#
-[DataTable(Name="Users")]
-public class User
-{
-    public int Id { get; set; }
-    
-    public string ProviderId { get; set; }
-}
-
-// ...snip...
-
-private IMobileServiceTable<User> userTable = App.MobileService.GetTable<User>();
-```
-
 ```c#
 var results = await userTable.Where(u => u.ProviderId == App.MobileService.CurrentUser.UserId).ToListAsync();
 User existingUser = results.FirstOrDefault();
