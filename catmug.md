@@ -190,8 +190,10 @@ function read(query, user, request) {
     var sql = 'SELECT t.id, t.text, t.complete, t.CreatedBy, \
                u.FirstName + \' \' + u.LastName AS CreatedByFullName \
                FROM TodoItem t \
-               JOIN Users u ON CreatedBy=ProviderId';
-    
+               JOIN Users u ON CreatedBy=ProviderId \
+               WHERE t.complete=0 \
+               ORDER BY t.id';
+
     mssql.query(sql, {
         success: function(results){
             console.log(results);
@@ -218,7 +220,8 @@ private async void RegisterPushChannel()
 ```javascript
 function insert(item, user, request) {
     tables.getTable('DeviceTokens').where({
-        Token: item.Token
+        Token: item.Token,
+        UserId: user.userId
     }).read({
         success: insertChannelIfNotFound
     });
