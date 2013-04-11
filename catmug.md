@@ -1,5 +1,6 @@
 # Cincinnati All Things Mobile User Group  
 April 11, 2013  
+Brett Samblanet  
 brettsam@microsoft.com  
 @brett_sam
 
