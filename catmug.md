@@ -95,20 +95,6 @@ http://msdn.microsoft.com/en-us/library/live/hh243646.aspx
 Revoking access:  
 https://www.google.com/dashboard/  
 https://consent.live.com
-```c#
-[DataTable(Name = "Users")]
-public class User
-{
-    public int Id { get; set; }
-    
-    public string ProviderId { get; set; }
-
-    public string FirstName { get; set; }
-
-    public string LastName { get; set; }
-}
-```
-
 ```javascript
 function read(query, user, request) {
 
