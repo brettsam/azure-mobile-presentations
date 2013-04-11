@@ -80,7 +80,7 @@ private IMobileServiceTable<User> userTable = App.MobileService.GetTable<User>()
 ```
 
 ```c#
-var results = await userTable.Where(u => u.ProviderId == user.UserId).ToListAsync();
+var results = await userTable.Where(u => u.ProviderId == App.MobileService.CurrentUser.UserId.UserId).ToListAsync();
 User existingUser = results.FirstOrDefault();
 
 if (existingUser == null)
