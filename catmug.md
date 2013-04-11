@@ -213,6 +213,8 @@ function insert(item, user, request) {
 ```javascript
 function update(item, user, request) {
 
+    delete item.CreatedByFullName;
+
     request.execute();
 
     if (item.CreatedBy === user.userId) {
