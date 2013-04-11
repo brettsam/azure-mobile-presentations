@@ -33,32 +33,6 @@ SQL Azure: http://www.windowsazure.com/en-us/home/features/data-management/
 
 ### Logging In
 http://blogs.msdn.com/b/carlosfigueira/archive/2012/10/23/troubleshooting-authentication-issues-in-azure-mobile-services.aspx  
-Add some login buttons:
-```xml
-<Grid Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,20">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <StackPanel Height="74" Grid.Column="0">
-            <TextBlock Foreground="#0094ff" FontFamily="Segoe UI Light" Margin="0,0,0,6">
-            			<Run Text="WINDOWS AZURE MOBILE SERVICES"/>
-            </TextBlock>
-            <TextBlock Foreground="Gray" FontFamily="Segoe UI Light" FontSize="45" >
-				<Run Text="catmug_demo"/>
-            </TextBlock>
-        </StackPanel>
-        <StackPanel Grid.Column="1" HorizontalAlignment="Right" x:Name="LoginButtons" Visibility="Visible">
-            <Button Click="Msft_Click">Login Microsoft</Button>
-            <Button Click="Goog_Click">Login Google</Button>
-        </StackPanel>
-        <StackPanel Grid.Column="1" HorizontalAlignment="Right" x:Name="LoggedInPanel" Visibility="Collapsed">
-            <Button Click="Logout_Click">Logout</Button>
-        </StackPanel>
-    </Grid>
-</Grid>
-```
 Login from C#:
 ```c#
 MobileServiceUser user = await App.MobileService.LoginAsync(provider);
