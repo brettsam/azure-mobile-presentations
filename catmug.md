@@ -1,5 +1,7 @@
-# Cincinnati All Things Mobile User Group
-April 11, 2013
+# Cincinnati All Things Mobile User Group  
+April 11, 2013  
+brettsam@microsoft.com  
+@brett_sam
 
 ### Introduction to Windows Azure Mobile Services
 Why?
