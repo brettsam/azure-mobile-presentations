@@ -228,6 +228,8 @@ function read(query, user, request) {
 http://www.windowsazure.com/en-us/develop/mobile/resources/#header-3  
 http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Windows-Store-app-Add-Push-Notifications-to-your-apps-with-Windows-Azure-Mobile-Services
 ```c#
+PushNotificationChannel CurrentChannel;
+
 private async void RegisterPushChannel()
 {
     CurrentChannel = await PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync();
