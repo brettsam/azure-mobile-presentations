@@ -27,6 +27,7 @@ Azure mobile dev center: http://www.windowsazure.com/en-us/develop/mobile/
 All supported SDKs have quickstarts that can be found at http://www.windowsazure.com/en-us/develop/mobile/tutorials/get-started/
 
 ### Behind the Scenes: REST API and SQL Azure
+http://www.thejoyofcode.com/Understanding_the_pipeline_and_sending_complex_objects_into_Mobile_Services_.aspx  
 Fiddler: http://fiddler2.com  
 Windows Azure Mobile Services REST API Reference: http://msdn.microsoft.com/en-us/library/windowsazure/jj710108.aspx  
 SQL Azure: http://www.windowsazure.com/en-us/home/features/data-management/
