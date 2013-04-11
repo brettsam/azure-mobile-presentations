@@ -200,6 +200,7 @@ function read(query, user, request) {
 }
 ```
 ### Associating Users with TodoItems
+```c#
 private void ButtonSave_Click(object sender, RoutedEventArgs e)
 {
     var todoItem = new TodoItem { Text = TextInput.Text, CreatedBy = App.MobileService.CurrentUser.UserId };
