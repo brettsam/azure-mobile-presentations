@@ -206,7 +206,7 @@ function insert(item, user, request) {
     }
 }
 ```
-### Sending a Push when a TodoItem is Completed (using the Table object)
+### Sending a Push when a TodoItem is Completed
 ```javascript
 function update(item, user, request) {
 
