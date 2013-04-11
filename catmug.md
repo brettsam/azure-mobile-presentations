@@ -200,33 +200,28 @@ function read(query, user, request) {
 }
 ```
 ### Associating Users with TodoItems
-```c#
-public class TodoItem
-{
-    public int Id { get; set; }
-
-    [DataMember(Name = "text")]
-    public string Text { get; set; }
-
-    [DataMember(Name = "complete")]
-    public bool Complete { get; set; }
-    
-    public string CreatedBy { get; set; }
-}
-
-// ...snip...
-
 private void ButtonSave_Click(object sender, RoutedEventArgs e)
 {
     var todoItem = new TodoItem { Text = TextInput.Text, CreatedBy = App.MobileService.CurrentUser.UserId };
     InsertTodoItem(todoItem);
 }
 ```
-```xml
-<StackPanel Orientation="Horizontal">
-    <CheckBox Name="CheckBoxComplete" IsChecked="{Binding Complete, Mode=TwoWay}" FontWeight="Bold" Checked="CheckBoxComplete_Checked" Content="{Binding Text}" Margin="10,5" VerticalAlignment="Center"/>
-    <TextBlock Text="{Binding CreatedBy}" FontStyle="Italic" VerticalAlignment="Center" />
-</StackPanel>
+### Using the mssql Object to Perform a Join
+```javascript
+function read(query, user, request) {
+
+    var sql = 'SELECT t.id, t.text, t.complete, t.CreatedBy, \
+               u.FirstName + \' \' + u.LastName AS CreatedByFullName \
+               FROM TodoItem t \
+               JOIN Users u ON CreatedBy=ProviderId';
+    
+    mssql.query(sql, {
+        success: function(results){
+            console.log(results);
+            request.respond(statusCodes.OK, results);
+        }
+    });
+}
 ```
 ### Registering Push Tokens
 http://www.windowsazure.com/en-us/develop/mobile/resources/#header-3  
@@ -289,25 +284,6 @@ function update(item, user, request) {
         });
     }
 }
-```
-### Sending a Push when a TodoItem is Completed (using the mssql object)
-http://msdn.microsoft.com/en-us/library/windowsazure/jj554212.aspx
-```javascript
-/* jshint multistr: true */
-
-var sql = 'SELECT * FROM DeviceTokens \
-           JOIN Users On UserId=ProviderId \
-           WHERE UserId=\'' + item.CreatedBy + '\'';
-
-mssql.query(sql, {
-    success: function(deviceTokens) {            
-        deviceTokens.forEach(function(deviceToken) {
-            push.wns.sendToastText01(deviceToken.Token, {
-                text1: deviceToken.FirstName + ' completed task: ' + item.text
-            });
-        });
-    }
-});
 ```
 ### Blob Storage
 http://www.nickharris.net/2012/11/how-to-upload-an-image-to-windows-azure-storage-using-mobile-services/
