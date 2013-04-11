@@ -123,7 +123,14 @@ function read(query, user, request) {
 ```
 ### User Identities
 http://blogs.msdn.com/b/carlosfigueira/archive/2012/10/25/getting-user-information-on-azure-mobile-services.aspx  
-http://thejoyofcode.com/Fetching_a_basic_user_profile_in_Mobile_Services_Day_9_.aspx
+http://thejoyofcode.com/Fetching_a_basic_user_profile_in_Mobile_Services_Day_9_.aspx  
+
+https://developers.google.com/accounts/docs/OAuth2Login  
+http://msdn.microsoft.com/en-us/library/live/hh243647.aspx  
+http://msdn.microsoft.com/en-us/library/live/hh243646.aspx
+
+https://www.google.com/dashboard/  
+https://consent.live.com
 ```c#
 [DataTable(Name = "Users")]
 public class User
