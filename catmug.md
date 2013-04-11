@@ -55,7 +55,7 @@ private IMobileServiceTable<User> userTable = App.MobileService.GetTable<User>()
 ```
 
 ```c#
-var results = await userTable.Where(u => u.ProviderId == App.MobileService.CurrentUser.UserId.UserId).ToListAsync();
+var results = await userTable.Where(u => u.ProviderId == App.MobileService.CurrentUser.UserId).ToListAsync();
 User existingUser = results.FirstOrDefault();
 
 if (existingUser == null)
@@ -81,6 +81,7 @@ if (existingUser == null)
     await userTable.InsertAsync(existingUser);
 }
 
+this.LoggedInPanel.DataContext = existingUser;
 RefreshTodoItems();
 this.LoggedInPanel.Visibility = Visibility.Visible;
 this.LoginButtons.Visibility = Visibility.Collapsed;
